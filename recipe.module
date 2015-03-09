@@ -1015,7 +1015,7 @@ function theme_recipe_summary($variables) {
       }
       $_text .= format_plural($_minutes, '1 minute', '@count minutes');
     }
-    
+
 
     // Wrap description in RDFa markup.
     if ( !empty($node->rdf_mapping['recipe_preptime']) ) {
@@ -1348,7 +1348,7 @@ function recipe_validate($node, $form, &$form_state) {
       $return = FALSE;
     }
   }
-  
+
   if (!is_numeric($form_state['values']['recipe_preptime']) || $form_state['values']['recipe_preptime'] < 0) {
     form_set_error('recipe_preptime', t('Preparation time must be a valid positive integer. Utilize 0 for N/A.'));
     $return = FALSE;
@@ -1357,7 +1357,7 @@ function recipe_validate($node, $form, &$form_state) {
     form_set_error('recipe_cooktime', t('Cooking time must be a valid positive integer. Utilize 0 for N/A.'));
     $return = FALSE;
   }
-  
+
   return $return;
 }
 
@@ -2053,6 +2053,7 @@ function recipe_get_units($limit_to_preferred = 0) {
     'bunch' =>    array('name' => t('bunch'),   'plural' => t('bunches'),  'abbreviation' => t('bn'),  'system' => 'common', 'type' => t('indefinite'), 'aliases' =>  array()),
     'dash' =>     array('name' => t('dash'),    'plural' => t('dashes'),   'abbreviation' => t('ds'),  'system' => 'common', 'type' => t('indefinite'), 'aliases' =>  array()),
     'carton' =>   array('name' => t('carton'),  'plural' => t('cartons'),  'abbreviation' => t('ct'),  'system' => 'common', 'type' => t('indefinite'), 'aliases' =>  array()),
+    'glug' =>     array('name' => t('glug'),    'plural' => t('glugs'),    'abbreviation' => t('gl'),  'system' => 'common', 'type' => t('indefinite'), 'aliases' =>  array()),
 
     'unit' =>     array('name' => t('unit'),    'plural' => t('units'),    'abbreviation' => '', 'system' => 'common', 'type' => t('indefinite'), 'aliases' => array('each', 'ea', 'whole')),
     'unknown' =>  array('name' => t('unknown'), 'plural' => t('unknown'),  'abbreviation' => '', 'system' => 'common', 'type' => t('indefinite'), 'aliases' =>  array())
